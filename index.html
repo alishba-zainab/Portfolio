@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alishba Zainab — Full-Stack Developer & AI App Developer</title>
+  <meta name="description" content="Portfolio of Alishba Zainab — full-stack developer and AI app developer building React/Node apps and wiring AI into real products." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__brand">
+        <span class="nav__brand-mark">A</span>
+        <span class="nav__brand-name">Alishba Zainab</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#timeline" class="nav__link">Certifications</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <!-- floating 2D decorative shapes — pure CSS animation, purely ambient -->
+      <div class="floaters" aria-hidden="true">
+        <span class="floater floater--1"></span>
+        <span class="floater floater--2"></span>
+        <span class="floater floater--3"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            <span class="reveal" style="--d:0">Alishba Zainab
+Full-Stack Developer and AI App Developer</span>
+          
+          </h1>
+          <p class="hero__subtitle reveal" style="--d:3">
+            Software Engineering student at Fatima Jinnah Women University, building
+            full-stack web apps with React and Node.js recent work includes a
+            RAG-based document assistant, a flight delay predictor, and a data-driven
+            outfit recommender.
+          </p>
+          <div class="hero__actions reveal" style="--d:4">
+            <a href="#work" class="btn btn--primary">See the work</a>
+            <a href="https://drive.google.com/file/d/1uVpM7IChoWEGPBp7v5kRhzjWHZmF3BMk/view?usp=sharing" class="btn btn--ghost" target="_blank" rel="noopener">Resume ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee reveal" style="--d:5">
+        <div class="marquee__track">
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Flask</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Groq/LLaMA</span>
+          <span class="chip">Python ML</span>
+          <span class="chip" aria-hidden="true">React</span>
+          <span class="chip" aria-hidden="true">Node.js</span>
+          <span class="chip" aria-hidden="true">Flask</span>
+          <span class="chip" aria-hidden="true">MongoDB</span>
+          <span class="chip" aria-hidden="true">Groq/LLaMA</span>
+          <span class="chip" aria-hidden="true">Python ML</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="container about__grid">
+        <div class="about__portrait reveal-on-scroll">
+          <img src="assets/image.png" alt="Portfolio picture" />
+        </div>
+
+        <div class="about__content reveal-on-scroll">
+          <h2 class="section-title">About</h2>
+          <p>
+            I'm a Software Engineering student who works across the full stack,
+            building responsive interfaces in React and the backend logic and AI
+            systems that power them. I'm particularly drawn to projects that pair
+            practical frontend work with a harder problem underneath a trained
+            machine learning model, or a retrieval-augmented generation pipeline.
+          </p>
+          <p>
+            Alongside coursework, I hold certifications in responsive web design
+            and front-end development.
+          </p>
+
+          <ul class="about__facts">
+            <li><span>Currently in</span> Islamabad, Pakistan</li>
+            <li><span>Studying</span> BS Software Engineering, FJWU (CGPA 3.58/4.00)</li>
+            <li><span>Interests</span> Reading · Gardening</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal-on-scroll">Skills</h2>
+       
+        <div class="skills__grid">
+          <div class="skill-group reveal-on-scroll">
+            <h3>Frontend</h3>
+            <div class="chip-row">
+              <span class="chip">HTML5</span>
+              <span class="chip">CSS3</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">React.js</span>
+            
+                
+            </div>
+          </div>
+
+          <div class="skill-group reveal-on-scroll">
+            <h3>Backend</h3>
+            <div class="chip-row">
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">Flask</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-on-scroll">
+            <h3>AI &amp; Data</h3>
+            <div class="chip-row">
+              <span class="chip">MongoDB Atlas Vector Search</span>
+              <span class="chip">Groq / LLaMA 3.3</span>
+              <span class="chip">Hugging Face Embeddings</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">Python (ML)</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-on-scroll">
+            <h3>Design &amp; Tools</h3>
+            <div class="chip-row">
+              <span class="chip">Figma</span>
+              <span class="chip">Adobe Illustrator</span>
+              <span class="chip">Canva</span>
+              <span class="chip">Git &amp; GitHub</span>
+              <span class="chip">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="work" id="work">
+      <div class="container">
+        <h2 class="section-title reveal-on-scroll">Selected work</h2>
+      
+
+        <div class="project-grid">
+
+          <article class="project-card reveal-on-scroll">
+            <div class="project-card__media project-card__media--live">
+              <span class="media-badge media-badge--live">● Live</span>
+              <iframe
+                src="https://docmind-eight-phi.vercel.app"
+                title="DocMind — live site"
+                loading="lazy"
+                referrerpolicy="no-referrer">
+              </iframe>
+            </div>
+            <div class="project-card__body">
+              <h3>DocMind</h3>
+              <p class="project-card__role">Retrieval-augmented generation document assistant</p>
+              <p>
+                Upload a PDF, DOCX, or TXT file and ask it direct questions. DocMind
+                retrieves the exact passage that answers you and cites it, instead of
+                guessing text is chunked and embedded, MongoDB Atlas Vector Search
+                finds the relevant passages, and Groq's LLaMA 3.3 generates a
+                grounded, source-cited answer. First end-to-end RAG app I've shipped.
+              </p>
+              <ul class="tag-list">
+                <li>React</li><li>Node/Express</li><li>MongoDB Atlas Vector Search</li><li>Groq LLaMA 3.3</li><li>HF Embeddings</li><li>Tailwind</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://github.com/alishba-zainab/docmind" target="_blank" rel="noopener">GitHub </a>
+                <a href="https://docmind-eight-phi.vercel.app" target="_blank" rel="noopener">Open live site </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal-on-scroll">
+            <div class="project-card__media">
+              <span class="media-badge">▶ Video demo</span>
+              <iframe
+                src="https://drive.google.com/file/d/17eVpO3yE5b6f2gobB3nJSsIztVDyRux-/preview"
+                title="Flight Delay Prediction — demo video"
+                loading="lazy"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="project-card__body">
+              <h3>Flight Delay Prediction</h3>
+              <p class="project-card__role">AI-powered prediction system</p>
+              <p>
+                A flight delay predictor built on real flight data. A React
+                interface presents predictions clearly and interactively, connected
+                in real time to a Python machine learning model through a Node.js
+                REST API layer.
+              </p>
+              <ul class="tag-list">
+                <li>React</li><li>Node.js</li><li>REST API</li><li>Python</li><li>Machine Learning</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://github.com/alishba-zainab/flight-delay-prediction" target="_blank" rel="noopener">GitHub </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal-on-scroll">
+            <div class="project-card__media">
+              <span class="media-badge">▶ Video demo</span>
+              <iframe
+                src="https://drive.google.com/file/d/14MUdq7wTIpLCygJCSSNlm2eVgsnhTOYv/preview"
+                title="OutfitPicker — demo video"
+                loading="lazy"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="project-card__body">
+              <h3>OutfitPicker</h3>
+              <p class="project-card__role">Data-driven outfit recommendation app</p>
+              <p>
+                A responsive outfit recommendation app that applies K-Means
+                clustering and Apriori association rule mining over a real fashion
+                dataset to generate personalised suggestions, plus Maya a Groq
+                LLaMA powered chatbot that recommends outfits conversationally.
+                Fully mobile responsive with reusable React components.
+              </p>
+              <ul class="tag-list">
+                <li>React</li><li>Node/Express</li><li>MySQL</li><li>Tailwind</li><li>Python (K-Means, Apriori)</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://github.com/alishba-zainab/outfit-picker-webapp" target="_blank" rel="noopener">GitHub 
+
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE / CERTIFICATIONS ============ -->
+    <section class="timeline" id="timeline">
+      <div class="container">
+        <h2 class="section-title reveal-on-scroll">Certifications</h2>
+       
+        <ol class="timeline__list">
+          <li class="reveal-on-scroll">
+            <span class="timeline__num">01</span>
+            <div>
+              <h3>Responsive Web Design</h3>
+              <p>freeCodeCamp</p>
+            </div>
+          </li>
+          <li class="reveal-on-scroll">
+            <span class="timeline__num">02</span>
+            <div>
+              <h3>Front-End Development</h3>
+              <p>Great Learning</p>
+            </div>
+          </li>
+          <li class="reveal-on-scroll">
+            <span class="timeline__num">03</span>
+            <div>
+              <h3>Google AI Essentials</h3>
+              <p>Google Skillshop</p>
+            </div>
+          </li>
+          <li class="timeline__list-more reveal-on-scroll">
+            <span class="timeline__num">→</span>
+            <div>
+              <h3>Currently exploring</h3>
+              <p>IBM SkillsBuild &amp; more Great Learning courses</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal-on-scroll">
+          <div class="orbit" aria-hidden="true">
+            <span class="orbit__dot"></span>
+          </div>
+          <h2 class="section-title">Let's talk</h2>
+          <p>
+            Open to full-stack and frontend roles. Happy to talk about any
+            of the above in more detail.
+          </p>
+          <ul class="contact__links">
+            <li>Email : <a href="mailto:alishbazainab078@gmail.com">alishbazainab078@gmail.com</a></li>
+            <li>Github : <a href="https://github.com/alishba-zainab" target="_blank" rel="noopener">github.com/alishba-zainab</a></li>
+            <li>Linkedln : <a href="https://linkedin.com/in/alishba-zainab-874b60356" target="_blank" rel="noopener">linkedin.com/in/alishba-zainab</a></li>
+
+          </ul>
+        </div>
+
+        <form class="contact__form reveal-on-scroll" id="contactForm" novalidate>
+          <label for="name">Name</label>
+
+
+
+  
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn btn--primary">Send message</button>
+          <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span id="year"></span> Alishba Zainab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
