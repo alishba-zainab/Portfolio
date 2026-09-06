@@ -1,9 +1,4 @@
-/* =========================================================
-   DESIGN TOKENS
-   Concept: a drafting-desk / blueprint aesthetic — deep navy
-   "blueprint paper" as the base surface, warm brass ink as
-   the accent, and pasted "paper" panels for contrast.
-   ========================================================= */
+/* colors and fonts used everywhere */
 :root {
   --navy-900: #0F1B2D;
   --navy-800: #16263D;
@@ -28,14 +23,10 @@
   --radius: 10px;
 }
 
-/* =========================================================
-   RESET / BASE
-   ========================================================= */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* Kill the browser's default gray/white tap-highlight flash on
-   touch devices and the default link/button hover halo. */
+/* no gray highlight when tapping on mobile */
 html {
   -webkit-tap-highlight-color: transparent;
 }
@@ -44,8 +35,7 @@ a, button {
   outline: none;
 }
 
-/* Blueprint grid — a literal drafting-paper grid behind the whole
-   page, not just the hero. */
+/* the grid lines in the background */
 :root {
   --grid-bg:
     linear-gradient(rgba(111, 168, 160, 0.12) 1px, transparent 1px),
@@ -62,14 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* One fixed background layer for the whole page — using a
-   position: fixed pseudo-element instead of
-   background-attachment: fixed, since that property is
-   unreliable on mobile Safari/Android (it's frequently ignored
-   or causes scroll jank). position: fixed is a standard, well
-   supported layout property, so this gives the same "grid stays
-   put while you scroll" effect consistently on every device,
-   defined once instead of repeated across every section. */
+/* grid background, stays fixed while scrolling */
 body::before {
   content: "";
   position: fixed;
@@ -103,7 +86,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; }
   max-width: 46ch;
 }
 
-/* Visible keyboard focus everywhere — accessibility floor */
+/* outline when tabbing through with keyboard */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -112,20 +95,14 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* Respect reduced-motion preference: kill decorative animation */
+/* turn off animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
   .project-card { transition: none !important; }
 }
 
-/* =========================================================
-   SCROLL-TRIGGERED REVEALS
-   Applied via JS (IntersectionObserver) adding .is-visible
-   once an element enters the viewport. Elements inside a
-   grid (skill groups, project cards, timeline rows) get an
-   incremental delay set by JS so they stagger in.
-   ========================================================= */
+/* fade in when scrolling into view, js adds is-visible class */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(22px);
@@ -137,9 +114,7 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* buttons */
 .btn {
   display: inline-block;
   padding: 0.85rem 1.6rem;
@@ -166,9 +141,7 @@ textarea:focus-visible {
 }
 .btn--ghost:hover { border-color: var(--amber); color: var(--amber); }
 
-/* =========================================================
-   NAV
-   ========================================================= */
+/* navbar */
 .site-header {
   position: fixed;
   inset-inline: 0;
@@ -238,8 +211,7 @@ textarea:focus-visible {
 .nav__link:hover,
 .nav__link.is-active { color: var(--cream-text); }
 
-/* Animated underline that slides in on hover, separate from the
-   static underline used for the currently active nav link. */
+/* underline slides in on hover */
 .nav__link::after {
   content: "";
   position: absolute;
@@ -251,6 +223,7 @@ textarea:focus-visible {
 }
 .nav__link:hover::after { width: 100%; }
 
+/* underline for the active page */
 .nav__link.is-active::after {
   content: "";
   position: absolute;
@@ -281,6 +254,7 @@ textarea:focus-visible {
   border-radius: 2px;
 }
 
+/* hamburger menu for mobile */
 @media (max-width: 760px) {
   .nav__toggle { display: flex; }
 
@@ -303,9 +277,7 @@ textarea:focus-visible {
   .nav__link--cta { display: inline-block; margin-top: 0.5rem; }
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* hero section */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -352,7 +324,7 @@ textarea:focus-visible {
 
 .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
-/* One orchestrated load-in sequence — staggered via --d custom property */
+/* fade in animation on page load, --d controls the delay for each element */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -363,10 +335,7 @@ textarea:focus-visible {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- skill-chip marquee: a full-width strip that scrolls sideways
-   forever. One @keyframes block, easy to explain: the chip list is
-   just duplicated once, and the whole track slides left by exactly
-   50% of its own width so the loop is seamless. ---- */
+/* scrolling chips in hero section */
 .marquee {
   width: 100%;
   max-width: 640px;
@@ -393,8 +362,7 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
-/* the track is the chip list duplicated once, so sliding it left by
-   50% of its own width loops back to an identical starting frame */
+/* chips are duplicated in html so this loop looks smooth */
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -404,7 +372,7 @@ textarea:focus-visible {
   .marquee__track { animation: none !important; }
 }
 
-/* ---- floating 2D shapes: ambient, non-interactive, purely decorative ---- */
+/* floating circles in hero */
 .floaters {
   position: absolute;
   inset: 0;
@@ -430,9 +398,7 @@ textarea:focus-visible {
   .floater { animation: none; }
 }
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+/* about section */
 .about { padding: 5.5rem 0; }
 
 .about__grid {
@@ -468,9 +434,7 @@ textarea:focus-visible {
   .about__portrait { max-width: 260px; }
 }
 
-/* =========================================================
-   SKILLS
-   ========================================================= */
+/* skills section */
 .skills { padding: 5.5rem 0; }
 
 .skills__grid {
@@ -507,9 +471,7 @@ textarea:focus-visible {
   .skills__grid { grid-template-columns: 1fr; }
 }
 
-/* =========================================================
-   PROJECTS
-   ========================================================= */
+/* projects section */
 .work { padding: 5.5rem 0; }
 
 .project-grid {
@@ -544,7 +506,6 @@ textarea:focus-visible {
   display: block;
 }
 .project-card__media--live iframe {
-  /* the live site is a full page, not a video — zoom out a touch so more of it is visible */
   transform: scale(1);
 }
 
@@ -602,9 +563,7 @@ textarea:focus-visible {
 }
 .project-card__links a:hover { border-color: var(--amber-dim); }
 
-/* =========================================================
-   TIMELINE / CERTIFICATIONS
-   ========================================================= */
+/* certifications section */
 .timeline { padding: 5.5rem 0; }
 
 .timeline__list {
@@ -643,9 +602,7 @@ textarea:focus-visible {
 
 .timeline__list-more .timeline__num { color: var(--sage); }
 
-/* =========================================================
-   CONTACT
-   ========================================================= */
+/* contact section */
 .contact { padding: 5.5rem 0; }
 
 .contact__grid {
@@ -657,7 +614,7 @@ textarea:focus-visible {
 .contact__intro { position: relative; }
 .contact__intro p { color: var(--muted); max-width: 42ch; }
 
-/* ---- orbiting dot: a small 2D animated object, matches the hero's 3D cube ---- */
+/* spinning dot next to the heading */
 .orbit {
   position: absolute;
   top: -10px;
@@ -740,9 +697,7 @@ textarea:focus-visible {
   .contact__grid { grid-template-columns: 1fr; }
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* footer */
 .site-footer { padding: 2.5rem 0; }
 .site-footer__inner {
   display: flex;

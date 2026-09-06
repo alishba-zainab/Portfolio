@@ -1,16 +1,7 @@
-/* =========================================================
-   script.js
-   Every feature here is plain vanilla JavaScript — no build
-   step, no libraries. Each block is independent, so you can
-   read/explain/remove any one of them on its own.
-   ========================================================= */
-
-// Respect the user's motion preference — several effects below check this.
+// checks if the user has reduced motion turned on in their device settings
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------------------------------------------------------
-   1. Mobile nav toggle
-   --------------------------------------------------------- */
+// mobile menu toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -19,7 +10,7 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-// Close the mobile menu whenever a link is clicked
+// close menu after clicking a link
 navLinks.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('is-open');
@@ -27,19 +18,14 @@ navLinks.querySelectorAll('a').forEach((link) => {
   });
 });
 
-/* ---------------------------------------------------------
-   2. Header shadow on scroll
-   --------------------------------------------------------- */
+// adds shadow to navbar once you scroll down a bit
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('is-scrolled', window.scrollY > 20);
 });
 
-/* ---------------------------------------------------------
-   3. Scroll-spy: highlight the nav link for the section
-      currently in view, using IntersectionObserver.
-   --------------------------------------------------------- */
+// highlights the current section's nav link while scrolling
 const sections = document.querySelectorAll('main section[id]');
 const navLinkByHref = new Map();
 document.querySelectorAll('.nav__link').forEach((link) => {
@@ -56,21 +42,15 @@ const spyObserver = new IntersectionObserver(
       link.classList.add('is-active');
     });
   },
-  { rootMargin: '-45% 0px -45% 0px' } // triggers when a section crosses the middle of the viewport
+  { rootMargin: '-45% 0px -45% 0px' }
 );
 
 sections.forEach((section) => spyObserver.observe(section));
 
-/* ---------------------------------------------------------
-   4. Scroll-triggered reveals.
-      Every element with .reveal-on-scroll fades/slides in the
-      first time it enters the viewport. Elements that share a
-      parent (a skills grid, a project grid, a timeline list)
-      get a small incremental delay so they stagger instead of
-      popping in all at once.
-   --------------------------------------------------------- */
+// fade-in animation when scrolling to a section
+// elements in the same group get a small delay so they appear one after another
 if (!prefersReducedMotion) {
-  const revealGroups = new Map(); // parent element -> count of children revealed so far
+  const revealGroups = new Map();
 
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -92,21 +72,11 @@ if (!prefersReducedMotion) {
 
   document.querySelectorAll('.reveal-on-scroll').forEach((el) => revealObserver.observe(el));
 } else {
-  // Motion is disabled — just show everything immediately.
+  // reduced motion is on, just show everything right away
   document.querySelectorAll('.reveal-on-scroll').forEach((el) => el.classList.add('is-visible'));
 }
 
-/* ---------------------------------------------------------
-   5. Project cards zoom forward on hover — handled entirely
-      in CSS (.project-card:hover). No JS needed for this one.
-   --------------------------------------------------------- */
-
-/* ---------------------------------------------------------
-   7. Contact form — front-end only.
-      There is no backend yet, so this just confirms the
-      message "sent" and resets the form. Wire this up to a
-      real endpoint (Formspree, EmailJS, your own API) later.
-   --------------------------------------------------------- */
+// contact form - no backend yet, just shows a fake success message
 const contactForm = document.getElementById('contactForm');
 const contactStatus = document.getElementById('contactStatus');
 
@@ -122,7 +92,5 @@ contactForm.addEventListener('submit', (e) => {
   contactForm.reset();
 });
 
-/* ---------------------------------------------------------
-   8. Footer year
-   --------------------------------------------------------- */
+// footer year
 document.getElementById('year').textContent = new Date().getFullYear();
