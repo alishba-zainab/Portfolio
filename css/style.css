@@ -417,7 +417,6 @@ textarea:focus-visible {
   margin: 0 auto;
   display: block;
 }
-
 .about__content p { color: var(--muted); max-width: 60ch; }
 .about__content strong { color: var(--cream-text); }
 
@@ -433,9 +432,9 @@ textarea:focus-visible {
 
 @media (max-width: 760px) {
   .about__grid { grid-template-columns: 1fr; }
-  .about__portrait {
-    max-width: 200px;
-    margin: 0 auto;
+  .about__portrait img {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -481,8 +480,16 @@ textarea:focus-visible {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 980px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .project-grid { grid-template-columns: 1fr; }
 }
 
 .project-card {
@@ -492,6 +499,8 @@ textarea:focus-visible {
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 .project-card:hover {
   transform: scale(1.06);
@@ -529,7 +538,12 @@ textarea:focus-visible {
 }
 .media-badge--live { color: var(--sage); }
 
-.project-card__body { padding: 1.6rem; }
+.project-card__body {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .project-card__body h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
 
 .project-card__role {
@@ -539,7 +553,14 @@ textarea:focus-visible {
   margin: 0 0 0.9rem;
 }
 
-.project-card__body p { color: #4A5568; font-size: 0.94rem; }
+.project-card__body p {
+  color: #4A5568;
+  font-size: 0.94rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .tag-list {
   display: flex;
@@ -558,7 +579,8 @@ textarea:focus-visible {
 .project-card__links {
   display: flex;
   gap: 1.2rem;
-  margin-top: 1.1rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
 }
 .project-card__links a {
   font-family: var(--font-mono);
