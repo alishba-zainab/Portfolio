@@ -26,9 +26,9 @@ portfolio/
 
 ## Projects shown
 
-- DocMind — live site embedded directly in an iframe
-- Flight Delay Prediction — demo video embedded from Google Drive
-- OutfitPicker — demo video embedded from Google Drive
+- DocMind - live site embedded directly in an iframe
+- Flight Delay Prediction - demo video embedded from Google Drive
+- OutfitPicker - demo video embedded from Google Drive
 
 ## Design
 
